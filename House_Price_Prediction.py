@@ -2,6 +2,14 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import pandas as pd
+
+# Load the data
+data = pd.read_csv('house_data.csv')
+
+# Print the column names for debugging
+print("Available columns:", data.columns)
+X = data[['actual_column_for_size', 'actual_column_for_bedrooms', 'actual_column_for_age']]
 
 
 # Step 2: Load the dataset
