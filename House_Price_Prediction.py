@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
 # Step 2: Load the dataset
-# Ensure you load the corrected dataset where the 'price' column does not have leading spaces
+# Use the correct delimiter for a tab-separated file
 data = pd.read_csv('house_data.csv', delimiter='\t')
 
 # Step 3: Data Preprocessing
@@ -13,7 +13,7 @@ print("Available columns:", data.columns)
 
 # Separate features (X) and target variable (y)
 X = data[['size', 'bedrooms', 'age']]  # Features
-y = data['price']  # Target variable (ensure there's no space in the column name)
+y = data['price']  # Target variable
 
 # Step 4: Train/Test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
