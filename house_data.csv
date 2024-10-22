@@ -1,4 +1,4 @@
-size    bedrooms    age    price
+size,   bedrooms,    age,    price
 2100    3           10     41500000
 1600    2           15     26560000
 2400    4           5      62250000
