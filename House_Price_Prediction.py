@@ -3,6 +3,15 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import pandas as pd
+# Load the data with the correct delimiter (tab-separated)
+data = pd.read_csv('house_data.csv', delimiter='\t')
+
+# Print the column names for debugging
+print("Available columns:", data.columns)
+
+# Correct feature selection
+X = data[['size', 'bedrooms', 'age']]  # Use correct column names based on the output
+
 
 # Load the data
 data = pd.read_csv('house_data.csv')
