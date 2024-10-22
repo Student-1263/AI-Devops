@@ -3,6 +3,18 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
+# Load the data
+data = pd.read_csv('house_data.csv')
+
+# Check if columns are concatenated, then split them
+if 'size,   bedrooms,    age,    price' in data.columns:
+    data = data['size,   bedrooms,    age,    price'].str.split(',', expand=True)
+    data.columns = ['size', 'bedrooms', 'age', 'price']
+
+# Proceed with your existing code
+X = data[['size', 'bedrooms', 'age']]  # Features
+y = data['price']  # Target
+
 # Step 2: Load the dataset
 # Use the correct delimiter for a tab-separated file
 data = pd.read_csv('house_data.csv', delimiter='\t')
